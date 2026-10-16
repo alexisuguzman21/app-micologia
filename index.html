@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscador Micológico</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>     
@@ -13,44 +13,45 @@
         <h1>Buscador de Hongos por Características</h1>
     </header>
 
-    <main>
-        <section id = 'filter-section'> 
-            <h2>Selecciona las características:</h2>
-            <form id="filter-form"> 
-                <div class="field">
-                    <label for="forma-pileo">Forma del Píleo:</label>
-                    <select id="forma-pileo">
-                        <option value="">-- Cualquiera --</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                </div>
+    <main class="main-container">
+        <aside>
+            <section id = 'filter-section'> 
+                <h2>Selecciona las características:</h2>
+                <form id="filter-form"> 
+                    <div class="field">
+                        <label for="forma-pileo">Forma del Píleo:</label>
+                        <select id="forma-pileo">
+                            <option value="">-- Cualquiera --</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
 
-                <div class="field">
-                    <label for="margen-pileo">Margen del Píleo:</label>
-                    <select id="margen-pileo">
-                        <option value="">-- Cualquiera --</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                </div>
+                    <div class="field">
+                        <label for="margen-pileo">Margen del Píleo:</label>
+                        <select id="margen-pileo">
+                            <option value="">-- Cualquiera --</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
 
-                <div class="field">
-                    <label for="color">Color: </label>
-                    <select id="color">
-                        <option value="">-- Cualquiera --</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                </div>
+                    <div class="field">
+                        <label for="color">Color: </label>
+                        <select id="color">
+                            <option value="">-- Cualquiera --</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
 
-                <button type="button" id = "search-btn">Buscar Coincidencias</button>
-            </form>
-        </section>
-
+                    <button type="button" id = "search-btn">Buscar Coincidencias</button>
+                </form>
+            </section>
+        </aside>
         <section id="results-section">
             <h2>Especies encontradas</h2>
             <ul id="results-list">
