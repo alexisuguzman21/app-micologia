@@ -17,38 +17,9 @@
         <aside>
             <section id = 'filter-section'> 
                 <h2>Selecciona las características:</h2>
-                <form id="filter-form"> 
-                    <div class="field">
-                        <label for="forma-pileo">Forma del Píleo:</label>
-                        <select id="forma-pileo">
-                            <option value="">-- Cualquiera --</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                    </div>
-
-                    <div class="field">
-                        <label for="margen-pileo">Margen del Píleo:</label>
-                        <select id="margen-pileo">
-                            <option value="">-- Cualquiera --</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                    </div>
-
-                    <div class="field">
-                        <label for="color">Color: </label>
-                        <select id="color">
-                            <option value="">-- Cualquiera --</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                    </div>
-
-                    <button type="button" id = "search-btn">Buscar Coincidencias</button>
+                <form id="filter-form">
+                    <div id="dynamic-filters-container"></div>
+                    <button type="button" id="search-btn">Buscar Coincidencias</button>
                 </form>
             </section>
         </aside>
