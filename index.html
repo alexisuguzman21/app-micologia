@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador Micológico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>     
+    <header> 
+        <h1>Buscador de Hongos por Características</h1>
+    </header>
+
+    <main>
+        <section id = 'filter_section'> 
+            <h2>Selecciona las características:</h2>
+            <form id="filter_form"> 
+                <div class="field">
+                    <label for="forma_pileo">Forma del Píleo:</label>
+                    <select id="forma_pileo">
+                        <option value="">-- Cualquiera --</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="margen_pileo">Margen del Píleo:</label>
+                    <select id="margen_pileo">
+                        <option value="">-- Cualquiera --</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="color">Color: </label>
+                    <select id="color">
+                        <option value="">-- Cualquiera --</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+
+                <button type="button" id = "search_btn">Buscar Coincidencias</button>
+            </form>
+        </section>
+
+        <section id="results-section">
+            <h2>Especies encontradas</h2>
+            <ul id="results-list">
+                <li>Selecciona opciones y presiona "Buscar Coincidencias".</li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="js/database.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
