@@ -45,6 +45,7 @@ aside h2 {
 
 .field {
     margin-bottom: 15px;
+    position: relative;
 }
 
 .field label {
@@ -54,12 +55,73 @@ aside h2 {
     font-weight: 500;
 }
 
-.field select {
+.multiselect-dropdown {
+    position: relative;
     width: 100%;
-    padding: 8px;
+}
+
+.select-box {
+    width: 100%;
+    padding: 8px 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #fff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #555;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-box::after {
+    content: '▼';
+    font-size: 0.7rem;
+    color: #666;
+}
+
+.select-box.active {
+    color: #104911;
+    font-weight: 600;
+    border-color: #27ae60;
+}
+
+.dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 180px;
+    overflow-y: auto;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 2px;
+    padding: 4px 0;
+}
+
+.dropdown-option {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #333;
+    user-select: none;
+}
+
+.dropdown-option:hover {
+    background-color: #f1f8ee;
+}
+
+.dropdown-option input {
+    margin-right: 10px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
 }
 
 #search-btn {
@@ -72,6 +134,7 @@ aside h2 {
     font-weight: bold;
     cursor: pointer;
     transition: background 0.2s;
+    margin-top: 5px;
 }
 
 #search-btn:hover {
@@ -86,7 +149,6 @@ section {
 }
 
 section h2 {
-    
     font-size: 1.2rem;
     margin-bottom: 15px;
     color: #104911;
@@ -94,14 +156,101 @@ section h2 {
 
 #results-list {
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-#results-list li {
-    padding: 10px;
-    border-bottom: 1px solid #eee;
+/* Tarjetas */
+.fungus-card {
+    background: #fdfdfd;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
 }
 
-#results-list li:last-child {
-    
-    border-bottom: none;
+.fungus-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.fungus-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.fungus-header h3 {
+    font-size: 1.3rem;
+    color: #104911;
+}
+
+.badge-tipo {
+    background-color: #D4EAC8;
+    color: #104911;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Descripción desplegable fija */
+.fungus-desc-details {
+    margin: 12px 0;
+    background: #f4f8f2;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #d0e4c6;
+}
+
+.fungus-desc-details summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: #276749;
+}
+
+.fungus-desc {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: #2d3748;
+    line-height: 1.4;
+}
+
+/* Atributos completos */
+.fungus-attributes {
+    margin-top: 14px;
+    background: #fafafa;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.fungus-attributes h4 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: #2d3748;
+}
+
+.attributes-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    color: #4a5568;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }

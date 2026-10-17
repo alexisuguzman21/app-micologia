@@ -1,43 +1,45 @@
 const opcionesBase = {
-    "Posición del estípite": [
+    "Posición del pie": [
         "central",
         "excéntrico",
         "lateral",
-        "ausente/no aplicable"
+        "ausente",
+        "no aplica"
     ],
-    "Inserción de láminas": [
+    "Inserción de las láminas": [
         "libres",
         "adnexas",
         "adnatas",
         "sinuadas",
         "decurrentes",
-        "sin láminas/no aplicable"
+        "no aplica"
     ],
-    "Margen de láminas": [
+    "Borde de las láminas": [
         "entero",
         "aserrado",
         "ondulado",
         "erosionado",
-        "festoneado/escalopado",
+        "festoneado",
         "concoloro",
-        "discoloro"
+        "discoloro",
+        "no aplica"
     ],
-    "Espaciado de láminas": [
+    "Espaciado de las láminas": [
         "juntas",
         "separadas",
         "con lamélulas cortas",
-        "sin láminas/no aplicable"
+        "no aplica"
     ],
-    "Margen del píleo": [
+    "Margen del sombrero": [
         "liso",
         "estriado",
         "apendiculado",
         "incurvado",
         "enrollado",
         "ondulado",
-        "con restos de velo"
+        "no aplica"
     ],
-    "Forma del píleo": [
+    "Forma del sombrero": [
         "convexo",
         "plano",
         "deprimido",
@@ -46,67 +48,68 @@ const opcionesBase = {
         "cónico",
         "embudado",
         "infundibuliforme",
-        "dimidiado/abanicado",
-        "sin píleo típico/no aplicable"
+        "consola semicircular a ungulada",
+        "roseta o masa colifloriforme",
+        "cilíndrico a ovoide muy alargado",
+        "no aplica"
     ],
-    "Superficie del píleo": [
+    "Superficie del sombrero": [
         "lisa",
-        "fibrilosa",
+        "aterciopelada",
+        "pubescente",
+        "radial",
+        "estriada",
+        "teselada",
+        "agrietada",
         "escamosa",
-        "agrietada/areolada",
-        "viscosa",
-        "granulosa",
+        "granular",
+        "pruinosa",
         "rugosa",
-        "reticulada",
-        "espinosa/esculturada",
-        "pubescente/afelpada"
+        "viscosa",
+        "zonada",
+        "no aplica"
     ],
-    "Anillo/velo parcial": [
+    "Anillo": [
         "ausente",
         "simple",
         "doble",
-        "membranoso",
-        "colgante",
-        "ascendente/reflejo",
+        "hacia arriba",
         "cortina",
-        "no aplicable"
+        "velo fibriloso-cotonoso",
+        "no aplica"
     ],
-    "Superficie del estípite": [
+    "Superficie del pie": [
         "lisa",
+        "recurvada",
         "reticulada",
-        "fibrilosa",
-        "escamosa",
-        "estriada",
-        "granulosa/punteada",
+        "punteada",
         "pruinosa",
-        "viscosa",
-        "no aplicable"
+        "estrigosa",
+        "pubescente",
+        "escabrosa",
+        "escrobiculada",
+        "no aplica"
     ],
-    "Forma del estípite": [
-        "igual",
-        "atenuado",
-        "ensanchado hacia la base",
+    "Forma y consistencia del pie": [
+        "cónico",
+        "igual / cilíndrico",
+        "ensanchado",
         "bulboso",
         "claviforme",
         "comprimido",
-        "excéntrico/lateral",
-        "ausente/no aplicable"
-    ],
-    "Contexto del estípite": [
-        "sólido",
-        "relleno",
+        "firme",
         "hueco",
-        "cavernoso",
-        "no aplicable"
+        "no aplica"
     ],
-    "Base del estípite": [
-        "simple",
-        "bulbosa",
+    "Base del pie": [
         "con rizomorfos",
+        "base insertada",
+        "estrigosa",
         "con micelio basal",
-        "con pseudorr raíces/cordones",
-        "con almohadilla micelial",
-        "ausente/no aplicable"
+        "bulbosa",
+        "atenuada",
+        "amplia zona de fijación",
+        "no aplica"
     ],
     "Volva": [
         "ausente",
@@ -114,454 +117,627 @@ const opcionesBase = {
         "envolvente",
         "circuncisa",
         "con margen lobulado",
-        "no aplicable"
-    ],
-    "Color y medidas": [
-        "color del píleo",
-        "color del estípite",
-        "diámetro del píleo (mm)",
-        "ancho del estípite (mm)",
-        "longitud del estípite (mm)",
-        "color de la superficie del píleo",
-        "color de la superficie del estípite"
+        "escamosa",
+        "en bandas concéntricas",
+        "no aplica"
     ]
 };
 
 const hongosDB = [
-    {
-        "nombre": "Amanita arocheae",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "cónico",
-                "convexo",
-                "umbonado"
-            ],
-            "Superficie del píleo": [
-                "fibrilosa"
-            ],
-            "Margen del píleo": [
-                "liso"
-            ],
-            "Inserción de láminas": [
-                "libres"
-            ],
-            "Posición del estípite": [
-                "central"
-            ],
-            "Anillo/velo parcial": [
-                "simple"
-            ],
-            "Volva": [
-                "saciforme"
-            ]
-        }
-    },
-    {
-        "nombre": "Amanita muscaria",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "convexo",
-                "plano"
-            ],
-            "Superficie del píleo": [
-                "viscosa"
-            ],
-            "Margen del píleo": [
-                "estriado"
-            ],
-            "Inserción de láminas": [
-                "libres"
-            ],
-            "Posición del estípite": [
-                "central"
-            ],
-            "Anillo/velo parcial": [
-                "simple"
-            ],
-            "Volva": [
-                "saciforme"
-            ]
-        }
-    },
-    {
-        "nombre": "Chlorophyllum molybdites",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "convexo",
-                "plano"
-            ],
-            "Superficie del píleo": [
-                "escamosa",
-                "fibrilosa"
-            ],
-            "Margen del píleo": [
-                "estriado"
-            ],
-            "Inserción de láminas": [
-                "libres"
-            ],
-            "Espaciado de láminas": [
-                "juntas",
-                "con lamélulas cortas"
-            ],
-            "Posición del estípite": [
-                "central"
-            ],
-            "Anillo/velo parcial": [
-                "simple"
-            ],
-            "Volva": [
-                "ausente"
-            ]
-        }
-    },
-    {
-        "nombre": "Macrolepiota procera",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "umbonado",
-                "convexo",
-                "plano"
-            ],
-            "Superficie del píleo": [
-                "escamosa",
-                "fibrilosa"
-            ],
-            "Inserción de láminas": [
-                "libres"
-            ],
-            "Posición del estípite": [
-                "central"
-            ],
-            "Anillo/velo parcial": [
-                "doble"
-            ]
-        }
-    },
-    {
-        "nombre": "Armillaria mellea",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "convexo",
-                "plano",
-                "umbonado"
-            ],
-            "Superficie del píleo": [
-                "viscosa",
-                "escamosa"
-            ],
-            "Inserción de láminas": [
-                "adnatas",
-                "decurrentes"
-            ],
-            "Margen de láminas": [
-                "entero"
-            ],
-            "Posición del estípite": [
-                "central"
-            ],
-            "Forma del estípite": [
-                "ensanchado hacia la base"
-            ],
-            "Anillo/velo parcial": [
-                "membranoso"
-            ],
-            "Superficie del estípite": [
-                "fibrilosa"
-            ]
-        }
-    },
-    {
-        "nombre": "Laccaria vinaceobrunnea",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "convexo",
-                "plano",
-                "deprimido"
-            ],
-            "Superficie del píleo": [
-                "escamosa"
-            ],
-            "Margen del píleo": [
-                "estriado"
-            ],
-            "Inserción de láminas": [
-                "adnatas",
-                "decurrentes"
-            ],
-            "Espaciado de láminas": [
-                "separadas"
-            ],
-            "Posición del estípite": [
-                "central"
-            ],
-            "Superficie del estípite": [
-                "fibrilosa"
-            ],
-            "Base del estípite": [
-                "con micelio basal"
-            ]
-        }
-    },
-    {
-        "nombre": "Lactarius mexicanus",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "convexo",
-                "deprimido"
-            ],
-            "Margen del píleo": [
-                "enrollado"
-            ],
-            "Posición del estípite": [
-                "central",
-                "excéntrico"
-            ],
-            "Forma del estípite": [
-                "atenuado",
-                "claviforme"
-            ],
-            "Superficie del estípite": [
-                "estriada"
-            ],
-            "Base del estípite": [
-                "con rizomorfos"
-            ]
-        }
-    },
-    {
-        "nombre": "Boletus edulis complex",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "convexo"
-            ],
-            "Superficie del píleo": [
-                "lisa",
-                "viscosa",
-                "agrietada/areolada"
-            ],
-            "Forma del estípite": [
-                "claviforme"
-            ],
-            "Superficie del estípite": [
-                "reticulada"
-            ]
-        }
-    },
-    {
-        "nombre": "Calvatia cyathiformis",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "sin píleo típico/no aplicable"
-            ],
-            "Inserción de láminas": [
-                "sin láminas/no aplicable"
-            ],
-            "Espaciado de láminas": [
-                "sin láminas/no aplicable"
-            ],
-            "Superficie del píleo": [
-                "lisa",
-                "agrietada/areolada"
-            ],
-            "Posición del estípite": [
-                "ausente/no aplicable"
-            ],
-            "Forma del estípite": [
-                "ausente/no aplicable"
-            ],
-            "Contexto del estípite": [
-                "no aplicable"
-            ],
-            "Volva": [
-                "no aplicable"
-            ]
-        }
-    },
-    {
-        "nombre": "Morchella esculenta species complex",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "cónico",
-                "convexo"
-            ],
-            "Superficie del píleo": [
-                "reticulada",
-                "rugosa"
-            ],
-            "Posición del estípite": [
-                "central"
-            ],
-            "Forma del estípite": [
-                "ensanchado hacia la base"
-            ],
-            "Contexto del estípite": [
-                "hueco"
-            ],
-            "Inserción de láminas": [
-                "sin láminas/no aplicable"
-            ]
-        }
-    },
-    {
-        "nombre": "Verpa bohemica",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "cónico",
-                "campanulado"
-            ],
-            "Superficie del píleo": [
-                "rugosa"
-            ],
-            "Posición del estípite": [
-                "central"
-            ],
-            "Contexto del estípite": [
-                "hueco"
-            ],
-            "Inserción de láminas": [
-                "sin láminas/no aplicable"
-            ]
-        }
-    },
-    {
-        "nombre": "Helvella lacunosa sensu lato (complejo)",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "sin píleo típico/no aplicable"
-            ],
-            "Superficie del píleo": [
-                "rugosa"
-            ],
-            "Margen del píleo": [
-                "enrollado"
-            ],
-            "Posición del estípite": [
-                "central"
-            ],
-            "Superficie del estípite": [
-                "estriada"
-            ],
-            "Forma del estípite": [
-                "comprimido"
-            ],
-            "Contexto del estípite": [
-                "hueco"
-            ],
-            "Inserción de láminas": [
-                "sin láminas/no aplicable"
-            ]
-        }
-    },
-    {
-        "nombre": "Hydnum repandum",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "convexo",
-                "plano",
-                "deprimido"
-            ],
-            "Inserción de láminas": [
-                "sin láminas/no aplicable"
-            ],
-            "Espaciado de láminas": [
-                "sin láminas/no aplicable"
-            ]
-        }
-    },
-    {
-        "nombre": "Craterellus cornucopioides",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "embudado",
-                "infundibuliforme"
-            ],
-            "Inserción de láminas": [
-                "sin láminas/no aplicable"
-            ],
-            "Espaciado de láminas": [
-                "sin láminas/no aplicable"
-            ],
-            "Posición del estípite": [
-                "central"
-            ]
-        }
-    },
-    {
-        "nombre": "Auricularia cornea",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "sin píleo típico/no aplicable"
-            ],
-            "Inserción de láminas": [
-                "sin láminas/no aplicable"
-            ],
-            "Espaciado de láminas": [
-                "sin láminas/no aplicable"
-            ],
-            "Posición del estípite": [
-                "ausente/no aplicable"
-            ],
-            "Forma del estípite": [
-                "ausente/no aplicable"
-            ]
-        }
-    },
-    {
-        "nombre": "Ramaria formosa",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "sin píleo típico/no aplicable"
-            ],
-            "Inserción de láminas": [
-                "sin láminas/no aplicable"
-            ],
-            "Espaciado de láminas": [
-                "sin láminas/no aplicable"
-            ],
-            "Posición del estípite": [
-                "ausente/no aplicable"
-            ],
-            "Forma del estípite": [
-                "ausente/no aplicable"
-            ]
-        }
-    },
-    {
-        "nombre": "Geastrum chamelense",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "sin píleo típico/no aplicable"
-            ],
-            "Inserción de láminas": [
-                "sin láminas/no aplicable"
-            ],
-            "Espaciado de láminas": [
-                "sin láminas/no aplicable"
-            ],
-            "Posición del estípite": [
-                "ausente/no aplicable"
-            ],
-            "Forma del estípite": [
-                "ausente/no aplicable"
-            ]
-        }
-    },
-    {
-        "nombre": "Cordyceps mexicana",
-        "caracteristicas": {
-            "Forma del píleo": [
-                "sin píleo típico/no aplicable"
-            ],
-            "Inserción de láminas": [
-                "sin láminas/no aplicable"
-            ],
-            "Espaciado de láminas": [
-                "sin láminas/no aplicable"
-            ],
-            "Posición del estípite": [
-                "ausente/no aplicable"
-            ]
-        }
+  {
+    "nombre": "Lactarius salmonicolor",
+    "tipo": "Laminado",
+    "imagen": "img/lactarius-salmonicolor.jpg",
+    "descripcion": "Asociado a oyamel (Abies religiosa). Presenta látex anaranjado-salmón, píleo zonado y viscoso, láminas anaranjadas y ausencia de viraje verde intenso.",
+    "caracteristicas": {
+      "Posición del pie": ["central"],
+      "Inserción de las láminas": ["adnatas", "decurrentes"],
+      "Borde de las láminas": ["entero", "concoloro"],
+      "Espaciado de las láminas": ["juntas"],
+      "Margen del sombrero": ["incurvado", "ondulado"],
+      "Forma del sombrero": ["convexo", "deprimido", "plano", "infundibuliforme"],
+      "Superficie del sombrero": ["lisa", "fibrilosa", "zonada", "viscosa"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["pruinosa", "fibrilosa"],
+      "Forma y consistencia del pie": ["cilíndrico", "firme", "hueco"],
+      "Base del pie": ["atenuada", "base insertada"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Píleo 4-11.5(-15) cm; pie usualmente más corto que el diámetro del píleo; naranja-salmón."],
+      "Contexto o carne": ["Gruesa, blanquecina a naranja bajo la cutícula; quebradiza, exuda látex naranja al corte, de color relativamente estable."]
     }
+  },
+  {
+    "nombre": "Amanita muscaria",
+    "tipo": "Laminado",
+    "imagen": "img/amanita-muscaria.jpg",
+    "descripcion": "Suelo con coníferas o encinos. Sombrero rojo con restos verrugosos del velo universal, láminas blancas, anillo membranoso y base bulbosa.",
+    "caracteristicas": {
+      "Posición del pie": ["central"],
+      "Inserción de las láminas": ["libres", "adnexas"],
+      "Borde de las láminas": ["entero"],
+      "Espaciado de las láminas": ["juntas"],
+      "Margen del sombrero": ["incurvado", "estriado"],
+      "Forma del sombrero": ["convexo", "plano", "deprimido"],
+      "Superficie del sombrero": ["granular", "viscosa"],
+      "Anillo": ["simple"],
+      "Superficie del pie": ["lisa", "escamosa", "pruinosa"],
+      "Forma y consistencia del pie": ["cilíndrico", "firme"],
+      "Base del pie": ["bulbosa"],
+      "Volva": ["en bandas concéntricas", "saciforme"],
+      "Color y dimensiones": ["Píleo habitualmente 5-20(-25) cm; pie 5-20 x 1-3 cm, variable."],
+      "Contexto o carne": ["Blanca, firme de joven; amarillenta o rojiza inmediatamente bajo la cutícula, sin cambio diagnóstico al corte."]
+    }
+  },
+  {
+    "nombre": "Amanita muscaria var. flavivolvata",
+    "tipo": "Laminado",
+    "imagen": "img/amanita-muscaria-flavivolvata.jpg",
+    "descripcion": "Restos del velo universal amarillos a crema sobre sombrero rojo-anaranjado; láminas blancas, anillo y círculos amarillentos de velo en base bulbosa.",
+    "caracteristicas": {
+      "Posición del pie": ["central"],
+      "Inserción de las láminas": ["libres", "adnexas"],
+      "Borde de las láminas": ["entero"],
+      "Espaciado de las láminas": ["juntas"],
+      "Margen del sombrero": ["estriado", "incurvado"],
+      "Forma del sombrero": ["convexo", "plano", "deprimido"],
+      "Superficie del sombrero": ["granular", "viscosa"],
+      "Anillo": ["simple"],
+      "Superficie del pie": ["lisa", "escamosa"],
+      "Forma y consistencia del pie": ["cilíndrico", "hueco"],
+      "Base del pie": ["bulbosa"],
+      "Volva": ["en bandas concéntricas"],
+      "Color y dimensiones": ["Píleo 5-17(-30) cm; pie 5-13.5(-20) x 1-3(-4) cm."],
+      "Contexto o carne": ["Blanca o crema, rojiza/amarillenta justo bajo la cutícula; no presenta látex."]
+    }
+  },
+  {
+    "nombre": "Fomitopsis schrenkii",
+    "tipo": "Poliporo",
+    "imagen": "img/fomitopsis-schrenkii.jpg",
+    "descripcion": "Madera muerta de coníferas. Consola leñosa plurianual, zonada con bandas oscuras y borde claro; poros claros y finos. Produce podredumbre parda.",
+    "caracteristicas": {
+      "Posición del pie": ["ausente"],
+      "Inserción de las láminas": ["no aplica"],
+      "Borde de las láminas": ["no aplica"],
+      "Espaciado de las láminas": ["no aplica"],
+      "Margen del sombrero": ["incurvado"],
+      "Forma del sombrero": ["consola semicircular a ungulada"],
+      "Superficie del sombrero": ["zonada", "rugosa"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["no aplica"],
+      "Forma y consistencia del pie": ["no aplica"],
+      "Base del pie": ["amplia zona de fijación"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Consola de varios centímetros a decenas; sin pie. Poroide claro, poros pequeños."],
+      "Contexto o carne": ["Suberosa a leñosa, crema a pardo pálido, con tubos estratificados; provoca pudrición parda."]
+    }
+  },
+  {
+    "nombre": "Hygrocybe conica",
+    "tipo": "Laminado",
+    "imagen": "img/hygrocybe-conica.jpg",
+    "descripcion": "Claritos musgosos y orillas húmedas. Todas las partes se ennegrecen visiblemente al envejecer o presionarse; píleo inicialmente cónico rojo-amarillo.",
+    "caracteristicas": {
+      "Posición del pie": ["central"],
+      "Inserción de las láminas": ["adnatas", "adnexas"],
+      "Borde de las láminas": ["entero"],
+      "Espaciado de las láminas": ["juntas"],
+      "Margen del sombrero": ["liso", "ondulado"],
+      "Forma del sombrero": ["cónico", "convexo", "umbonado"],
+      "Superficie del sombrero": ["lisa", "radial", "viscosa"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["lisa", "estriada"],
+      "Forma y consistencia del pie": ["cónico", "hueco"],
+      "Base del pie": ["atenuada", "base insertada"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Píleo 1-4(-6) cm; pie 3-8 x 0.3-1 cm."],
+      "Contexto o carne": ["Delgada, acuosa, amarilla-anaranjada que vira progresivamente a gris oscuro o negro."]
+    }
+  },
+  {
+    "nombre": "Hypholoma lateritium",
+    "tipo": "Laminado",
+    "imagen": "img/hypholoma-lateritium.jpg",
+    "descripcion": "Tocones y troncos de encino en racimos. Centro del sombrero rojo ladrillo, margen crema, láminas blanquecinas que pasan a gris y púrpura-pardo.",
+    "caracteristicas": {
+      "Posición del pie": ["central"],
+      "Inserción de las láminas": ["adnatas", "adnexas", "sinuadas"],
+      "Borde de las láminas": ["entero"],
+      "Espaciado de las láminas": ["juntas"],
+      "Margen del sombrero": ["incurvado", "apendiculado"],
+      "Forma del sombrero": ["convexo", "plano"],
+      "Superficie del sombrero": ["lisa"],
+      "Anillo": ["cortina"],
+      "Superficie del pie": ["lisa", "pruinosa"],
+      "Forma y consistencia del pie": ["igual / cilíndrico", "firme"],
+      "Base del pie": ["con rizomorfos", "atenuada"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Píleo 3-10 cm; pie 4-12 x 1-2 cm."],
+      "Contexto o carne": ["Firme, blanquecina a amarillenta; esporada púrpura-parda."]
+    }
+  },
+  {
+    "nombre": "Amanita flavoconia",
+    "tipo": "Laminado",
+    "imagen": "img/amanita-flavoconia.jpg",
+    "descripcion": "Suelo bajo encinos. Píleo naranja/amarillo con partículas amarillas fugaces, láminas blancas y anillo amarillo alto; base con polvo amarillo.",
+    "caracteristicas": {
+      "Posición del pie": ["central"],
+      "Inserción de las láminas": ["libres", "adnexas"],
+      "Borde de las láminas": ["entero"],
+      "Espaciado de las láminas": ["juntas"],
+      "Margen del sombrero": ["liso", "estriado"],
+      "Forma del sombrero": ["convexo", "plano"],
+      "Superficie del sombrero": ["granular", "viscosa"],
+      "Anillo": ["simple"],
+      "Superficie del pie": ["lisa", "pruinosa"],
+      "Forma y consistencia del pie": ["igual / cilíndrico", "ensanchado"],
+      "Base del pie": ["bulbosa"],
+      "Volva": ["escamosa"],
+      "Color y dimensiones": ["Píleo 3-9 cm; pie 5-12 x 0.5-1 cm."],
+      "Contexto o carne": ["Blanca a amarillenta bajo la cutícula; sin látex, sin viraje marcado."]
+    }
+  },
+  {
+    "nombre": "Psilocybe muliercula",
+    "tipo": "Laminado",
+    "imagen": "img/psilocybe-muliercula.jpg",
+    "descripcion": "Suelo húmedo y humus. Píleo pequeño pardo-rojizo higrófano, láminas pardas con esporada púrpura oscura y azuleamiento por lesión del pie.",
+    "caracteristicas": {
+      "Posición del pie": ["central"],
+      "Inserción de las láminas": ["adnexas", "sinuadas", "adnatas"],
+      "Borde de las láminas": ["entero"],
+      "Espaciado de las láminas": ["juntas"],
+      "Margen del sombrero": ["liso", "estriado", "ondulado"],
+      "Forma del sombrero": ["campanulado", "cónico", "convexo", "umbonado", "plano"],
+      "Superficie del sombrero": ["lisa", "estriada"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["pruinosa", "estrigosa"],
+      "Forma y consistencia del pie": ["igual / cilíndrico", "hueco"],
+      "Base del pie": ["base insertada", "con micelio basal"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Píleo aprox. 1.5-4 cm; pie aprox. 3-6 x 0.4-0.7 cm."],
+      "Contexto o carne": ["Delgada pardo clara; azuleamiento variable al lesionarse. Esporada pardo-púrpura."]
+    }
+  },
+  {
+    "nombre": "Tricholoma vaccinum",
+    "tipo": "Laminado",
+    "imagen": "img/tricholoma-vaccinum.jpg",
+    "descripcion": "Asociado a Picea / coníferas. Píleo pardo rojizo con fibrillas escamosas lanosas, margen incurvado muy piloso y láminas pálidas sinuadas.",
+    "caracteristicas": {
+      "Posición del pie": ["central"],
+      "Inserción de las láminas": ["sinuadas"],
+      "Borde de las láminas": ["entero", "aserrado"],
+      "Espaciado de las láminas": ["juntas"],
+      "Margen del sombrero": ["enrollado"],
+      "Forma del sombrero": ["convexo", "umbonado"],
+      "Superficie del sombrero": ["escamosa", "radial"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["pruinosa", "escabrosa"],
+      "Forma y consistencia del pie": ["igual / cilíndrico", "firme", "hueco"],
+      "Base del pie": ["con micelio basal", "atenuada"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Píleo aprox. 3-10 cm; pie 4-10 x 1-2 cm."],
+      "Contexto o carne": ["Blanquecina a rosado muy pálido, sin cambio marcado al corte; olor generalmente harinoso."]
+    }
+  },
+  {
+    "nombre": "Laccaria amethystina",
+    "tipo": "Laminado",
+    "imagen": "img/laccaria-amethystina.jpg",
+    "descripcion": "Suelo con hojarasca de encino. Joven violeta amatista uniforme, láminas gruesas, espaciadas, violetas y esporada blanca; palidece al secarse.",
+    "caracteristicas": {
+      "Posición del pie": ["central"],
+      "Inserción de las láminas": ["adnatas", "decurrentes"],
+      "Borde de las láminas": ["entero", "ondulado"],
+      "Espaciado de las láminas": ["separadas"],
+      "Margen del sombrero": ["estriado", "ondulado"],
+      "Forma del sombrero": ["convexo", "plano", "deprimido"],
+      "Superficie del sombrero": ["granular", "escamosa"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["radial"],
+      "Forma y consistencia del pie": ["igual / cilíndrico", "firme"],
+      "Base del pie": ["con micelio basal"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Píleo 2-7 cm; pie 4-10 x 0.3-1 cm."],
+      "Contexto o carne": ["Delgada, lila pálida; esporada blanca, sin látex."]
+    }
+  },
+  {
+    "nombre": "Hemistropharia albocrenulata",
+    "tipo": "Laminado",
+    "imagen": "img/hemistropharia-albocrenulata.jpg",
+    "descripcion": "Troncos de latifoliadas. Borde de las láminas finamente crenulado, persistentemente blanco y gotitas; píleo viscoso escamoso y pie escamoso.",
+    "caracteristicas": {
+      "Posición del pie": ["central"],
+      "Inserción de las láminas": ["adnatas", "sinuadas", "decurrentes"],
+      "Borde de las láminas": ["entero", "festoneado"],
+      "Espaciado de las láminas": ["juntas"],
+      "Margen del sombrero": ["apendiculado"],
+      "Forma del sombrero": ["convexo", "umbonado"],
+      "Superficie del sombrero": ["viscosa", "escamosa"],
+      "Anillo": ["velo fibriloso-cotonoso"],
+      "Superficie del pie": ["escabrosa", "recurvada"],
+      "Forma y consistencia del pie": ["igual / cilíndrico", "firme", "hueco"],
+      "Base del pie": ["base insertada", "amplia zona de fijación"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Píleo aproximadamente 3-10(-15) cm; pie 3-10(-15) x 0.5-1.5 cm."],
+      "Contexto o carne": ["Pálida y gruesa en sombrero, fibrosa en pie; láminas blancas grises pardo herrumbre."]
+    }
+  },
+  {
+    "nombre": "Apioperdon pyriforme",
+    "tipo": "Gasteroide",
+    "imagen": "img/apioperdon-pyriforme.jpg",
+    "descripcion": "Madera enterrada o podrida. Forma de pera, superficie granulosa, base reducida y haces miceliales blancos; gleba blanca que pasa a pardo-oliva.",
+    "caracteristicas": {
+      "Posición del pie": ["ausente"],
+      "Inserción de las láminas": ["no aplica"],
+      "Borde de las láminas": ["no aplica"],
+      "Espaciado de las láminas": ["no aplica"],
+      "Margen del sombrero": ["no aplica"],
+      "Forma del sombrero": ["no aplica"],
+      "Superficie del sombrero": ["granular", "pruinosa"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["pruinosa"],
+      "Forma y consistencia del pie": ["firme"],
+      "Base del pie": ["con rizomorfos"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Basidioma aprox. 1.5-5 cm de diámetro y 2-5 cm de alto; muy variable."],
+      "Contexto o carne": ["Gleba blanca y firme de joven, después amarillo-oliva y finalmente pardo oliva, seca y pulverulenta; ostíolo apical."]
+    }
+  },
+  {
+    "nombre": "Cryptoporus volvatus",
+    "tipo": "Poliporo",
+    "imagen": "img/cryptoporus-volvatus.jpg",
+    "descripcion": "Madera conífera muerta. Poroide en forma de pezuña; la superficie de poros permanece oculta detrás de una membrana con abertura basal.",
+    "caracteristicas": {
+      "Posición del pie": ["ausente"],
+      "Inserción de las láminas": ["no aplica"],
+      "Borde de las láminas": ["no aplica"],
+      "Espaciado de las láminas": ["no aplica"],
+      "Margen del sombrero": ["incurvado"],
+      "Forma del sombrero": ["consola semicircular a ungulada"],
+      "Superficie del sombrero": ["lisa"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["no aplica"],
+      "Forma y consistencia del pie": ["no aplica"],
+      "Base del pie": ["amplia zona de fijación"],
+      "Volva": ["envolvente", "ausente"],
+      "Color y dimensiones": ["Píleo 1.5-5(-8.5) cm; sin pie; poros ocultos 3-5/mm."],
+      "Contexto o carne": ["Blanquecina, luego pardo pálido; suberosa. Cámara bajo la membrana con esporas y ostíolo asociado a insectos."]
+    }
+  },
+  {
+    "nombre": "Ramaria stricta",
+    "tipo": "Coraliforme",
+    "imagen": "img/ramaria-stricta.jpg",
+    "descripcion": "Madera podrida enterrada. Ramas delgadas, repetidamente bifurcadas, casi paralelas y erectas; reacción pardo-vinosa al magullarse.",
+    "caracteristicas": {
+      "Posición del pie": ["ausente"],
+      "Inserción de las láminas": ["no aplica"],
+      "Borde de las láminas": ["no aplica"],
+      "Espaciado de las láminas": ["no aplica"],
+      "Margen del sombrero": ["no aplica"],
+      "Forma del sombrero": ["no aplica"],
+      "Superficie del sombrero": ["lisa", "rugosa"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["lisa"],
+      "Forma y consistencia del pie": ["firme"],
+      "Base del pie": ["con rizomorfos"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Conjunto 4-10 cm de alto y hasta 8 cm de ancho; beige-ocre a pardo."],
+      "Contexto o carne": ["Blanquecina a ocre, fibroso-elástica; superficies fértiles de las ramas pueden tornarse vinosas al golpe."]
+    }
+  },
+  {
+    "nombre": "Sparassis americana",
+    "tipo": "Coraliforme",
+    "imagen": "img/sparassis-americana.jpg",
+    "descripcion": "Base y raíces de pinos. Gran mata de láminas onduladas, rizadas, tipo 'fideos' apretados que nacen de base carnosa común.",
+    "caracteristicas": {
+      "Posición del pie": ["ausente"],
+      "Inserción de las láminas": ["no aplica"],
+      "Borde de las láminas": ["no aplica"],
+      "Espaciado de las láminas": ["no aplica"],
+      "Margen del sombrero": ["no aplica"],
+      "Forma del sombrero": ["roseta o masa colifloriforme"],
+      "Superficie del sombrero": ["lisa", "ondulada"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["lisa"],
+      "Forma y consistencia del pie": ["firme", "ensanchado"],
+      "Base del pie": ["base insertada"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Basidioma 9-25 cm de ancho y hasta 15 cm de alto; crema, amarillo pálido a beige."],
+      "Contexto o carne": ["Blanquecina, flexible y carnosa, bastante tierna; no se mancha al corte."]
+    }
+  },
+  {
+    "nombre": "Leccinum manzanitae",
+    "tipo": "Boleto",
+    "imagen": "img/leccinum-manzanitae.jpg",
+    "descripcion": "Junto a Arctostaphylos / Arbutus. Sombrero rojizo oscuro, himenóforo tubular y pie recubierto de escabrosidades que se oscurecen.",
+    "caracteristicas": {
+      "Posición del pie": ["central"],
+      "Inserción de las láminas": ["decurrentes", "adnatas"],
+      "Borde de las láminas": ["entero"],
+      "Espaciado de las láminas": ["juntas"],
+      "Margen del sombrero": ["liso"],
+      "Forma del sombrero": ["convexo", "plano", "deprimido"],
+      "Superficie del sombrero": ["viscosa", "aterciopelada"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["escabrosa"],
+      "Forma y consistencia del pie": ["igual / cilíndrico", "claviforme", "firme"],
+      "Base del pie": ["bulbosa", "base insertada"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Sombrero aproximadamente 7-20 cm de diámetro; pie hasta unos 16 cm de largo y 3.5 cm de grosor."],
+      "Contexto o carne": ["Blanca inicialmente; puede ennegrecer de manera lenta e irregular, a veces con tonos azulados o azul-negros. Tubos inicialmente claros."]
+    }
+  },
+  {
+    "nombre": "Lactarius indigo",
+    "tipo": "Laminado",
+    "imagen": "img/lactarius-indigo.jpg",
+    "descripcion": "Suelo bajo encinos / pinos. Azul índigo en sombrero, láminas y látex; heridas y látex se tornan verde grisáceo.",
+    "caracteristicas": {
+      "Posición del pie": ["central", "excéntrico"],
+      "Inserción de las láminas": ["adnatas", "decurrentes"],
+      "Borde de las láminas": ["entero"],
+      "Espaciado de las láminas": ["juntas"],
+      "Margen del sombrero": ["enrollado", "ondulado"],
+      "Forma del sombrero": ["deprimido", "infundibuliforme", "plano"],
+      "Superficie del sombrero": ["zonada", "viscosa"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["escrobiculada", "viscosa"],
+      "Forma y consistencia del pie": ["igual / cilíndrico", "firme", "hueco"],
+      "Base del pie": ["atenuada", "base insertada"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Píleo 5-15 cm; pie 2-8x hasta ~2.5 cm."],
+      "Contexto o carne": ["Blanquecina a azulada que azulea al corte y se vuelve verdosa con tiempo; exuda látex azul índigo."]
+    }
+  },
+  {
+    "nombre": "Hygrocybe coccinea",
+    "tipo": "Laminado",
+    "imagen": "img/hygrocybe-coccinea.jpg",
+    "descripcion": "Claros y musgos. Pequeño sombrero escarlata brillante, láminas céreas anaranjadas y pie rojo-amarillo sin ennegrecimiento.",
+    "caracteristicas": {
+      "Posición del pie": ["central"],
+      "Inserción de las láminas": ["adnexas", "adnatas", "libres"],
+      "Borde de las láminas": ["entero"],
+      "Espaciado de las láminas": ["separadas"],
+      "Margen del sombrero": ["liso", "ondulado"],
+      "Forma del sombrero": ["convexo", "campanulado", "plano"],
+      "Superficie del sombrero": ["lisa", "viscosa"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["lisa"],
+      "Forma y consistencia del pie": ["igual / cilíndrico", "hueco"],
+      "Base del pie": ["atenuada"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Píleo aprox. 2-5 cm; pie 3-6 x 0.4-0.8 cm."],
+      "Contexto o carne": ["Fina, rojiza o amarilla, acuosa; no se ennegrece al lesionarse."]
+    }
+  },
+  {
+    "nombre": "Clavulina cinerea",
+    "tipo": "Coraliforme",
+    "imagen": "img/clavulina-cinerea.jpg",
+    "descripcion": "Suelo con hojarasca. Ramas aplanadas gris ceniza o gris lila, con puntas obtusas, sin cabeza ni láminas diferenciadas.",
+    "caracteristicas": {
+      "Posición del pie": ["ausente"],
+      "Inserción de las láminas": ["no aplica"],
+      "Borde de las láminas": ["no aplica"],
+      "Espaciado de las láminas": ["no aplica"],
+      "Margen del sombrero": ["no aplica"],
+      "Forma del sombrero": ["no aplica"],
+      "Superficie del sombrero": ["lisa", "rugosa"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["lisa"],
+      "Forma y consistencia del pie": ["firme"],
+      "Base del pie": ["base insertada"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Basidioma 3-10 cm alto, de anchura similar o inferior."],
+      "Contexto o carne": ["Pálida a gris, flexible a frágil, sin látex; himenio reviste la superficie de las ramas."]
+    }
+  },
+  {
+    "nombre": "Exsudoporus frostii",
+    "tipo": "Boleto",
+    "imagen": "img/exsudoporus-frostii.jpg",
+    "descripcion": "Bajo encinos. Rojo intenso en píleo y poros, pie rojo marcadamente reticulado y azuleamiento rápido al tocar o cortar.",
+    "caracteristicas": {
+      "Posición del pie": ["central"],
+      "Inserción de las láminas": ["adnatas", "decurrentes"],
+      "Borde de las láminas": ["entero"],
+      "Espaciado de las láminas": ["juntas"],
+      "Margen del sombrero": ["incurvado"],
+      "Forma del sombrero": ["convexo", "plano"],
+      "Superficie del sombrero": ["lisa", "viscosa"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["reticulada"],
+      "Forma y consistencia del pie": ["igual / cilíndrico", "claviforme", "firme"],
+      "Base del pie": ["bulbosa", "base insertada"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Píleo 3.5-8 cm y pie 4-8 x 1-1.5 cm."],
+      "Contexto o carne": ["Blanquecina a amarillo pálido, con enrojecimiento en la base del pie en algunos ejemplares; azuleamiento en carne y superficie porosa al corte o lesión. Esporada pardo olivácea."]
+    }
+  },
+  {
+    "nombre": "Coprinus comatus",
+    "tipo": "Laminado",
+    "imagen": "img/coprinus-comatus.jpg",
+    "descripcion": "Bordes herbosos de sendero. Píleo cilíndrico con escamas blancas largas; láminas que se licúan en tinta negra.",
+    "caracteristicas": {
+      "Posición del pie": ["central"],
+      "Inserción de las láminas": ["libres"],
+      "Borde de las láminas": ["entero"],
+      "Espaciado de las láminas": ["juntas"],
+      "Margen del sombrero": ["incurvado", "enrollado"],
+      "Forma del sombrero": ["cilíndrico a ovoide muy alargado", "campanulado"],
+      "Superficie del sombrero": ["escamosa", "radial"],
+      "Anillo": ["simple"],
+      "Superficie del pie": ["lisa", "pruinosa"],
+      "Forma y consistencia del pie": ["igual / cilíndrico", "hueco"],
+      "Base del pie": ["bulbosa", "base insertada"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Píleo joven 3-6 cm ancho y 5-15 cm alto; pie hasta 20 x 1-2 cm."],
+      "Contexto o carne": ["Blanca y fina, se vuelve rosada y negra en láminas; delicuescencia negra acuosa."]
+    }
+  },
+  {
+    "nombre": "Amanita laurae",
+    "tipo": "Laminado",
+    "imagen": "img/amanita-laurae.jpg",
+    "descripcion": "Suelo de coníferas / encinos. Píleo amarillo a anaranjado, láminas amarillentas, anillo y volva basal membranosa.",
+    "caracteristicas": {
+      "Posición del pie": ["central"],
+      "Inserción de las láminas": ["adnexas", "libres"],
+      "Borde de las láminas": ["entero"],
+      "Espaciado de las láminas": ["juntas"],
+      "Margen del sombrero": ["estriado", "incurvado"],
+      "Forma del sombrero": ["convexo", "plano", "umbonado"],
+      "Superficie del sombrero": ["lisa"],
+      "Anillo": ["simple"],
+      "Superficie del pie": ["lisa", "pruinosa"],
+      "Forma y consistencia del pie": ["igual / cilíndrico", "ensanchado"],
+      "Base del pie": ["bulbosa"],
+      "Volva": ["saciforme"],
+      "Color y dimensiones": ["Píleo amarillo a amarillo-anaranjado, pie amarillo a anaranjado."],
+      "Contexto o carne": ["Blanca a pálida, firme; no posee látex ni ennegrecimiento característico."]
+    }
+  },
+  {
+    "nombre": "Gerronema strombodes",
+    "tipo": "Laminado",
+    "imagen": "img/gerronema-strombodes.jpg",
+    "descripcion": "Madera húmeda descompuesta. Píleo pardo que palidece a ocre-amarillo con depresión; láminas amarillas claramente decurrentes.",
+    "caracteristicas": {
+      "Posición del pie": ["central"],
+      "Inserción de las láminas": ["decurrentes"],
+      "Borde de las láminas": ["entero"],
+      "Espaciado de las láminas": ["separadas"],
+      "Margen del sombrero": ["incurvado", "estriado"],
+      "Forma del sombrero": ["convexo", "deprimido", "embudado"],
+      "Superficie del sombrero": ["lisa", "radial"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["lisa"],
+      "Forma y consistencia del pie": ["igual / cilíndrico", "ensanchado"],
+      "Base del pie": ["atenuada", "fijada a madera"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Píleo aprox. 1.5-6 cm; pie 3-10 x 0.2-0.8 cm."],
+      "Contexto o carne": ["Muy fina, blanquecina a amarilla, sin viraje significativo; esporada blanca."]
+    }
+  },
+  {
+    "nombre": "Scleroderma citrinum",
+    "tipo": "Gasteroide",
+    "imagen": "img/scleroderma-citrinum.jpg",
+    "descripcion": "Suelo cerca de raíces. 'Bola' amarillenta de pared gruesa y dura con escamas pardas; gleba interna precozmente morada-negra. Tóxico.",
+    "caracteristicas": {
+      "Posición del pie": ["ausente"],
+      "Inserción de las láminas": ["no aplica"],
+      "Borde de las láminas": ["no aplica"],
+      "Espaciado de las láminas": ["no aplica"],
+      "Margen del sombrero": ["no aplica"],
+      "Forma del sombrero": ["no aplica"],
+      "Superficie del sombrero": ["escamosa", "rugosa"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["no aplica"],
+      "Forma y consistencia del pie": ["no aplica"],
+      "Base del pie": ["con rizomorfos"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Diámetro habitual 3-10 cm; pared 1-3 mm de grosor."],
+      "Contexto o carne": ["Peridio resistente, blanco dentro de joven; gleba de blanco temprano a púrpura-negra marmoleada y luego parda polvorienta."]
+    }
+  },
+  {
+    "nombre": "Geastrum saccatum",
+    "tipo": "Gasteroide",
+    "imagen": "img/geastrum-saccatum.jpg",
+    "descripcion": "Hojarasca y suelo forestal. Exoperidio abierto en 4-9 rayos formando estrella, saco esporífero sin pedúnculo y boca lisa rodeada por disco circular.",
+    "caracteristicas": {
+      "Posición del pie": ["ausente"],
+      "Inserción de las láminas": ["no aplica"],
+      "Borde de las láminas": ["no aplica"],
+      "Espaciado de las láminas": ["no aplica"],
+      "Margen del sombrero": ["no aplica"],
+      "Forma del sombrero": ["no aplica"],
+      "Superficie del sombrero": ["lisa"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["no aplica"],
+      "Forma y consistencia del pie": ["no aplica"],
+      "Base del pie": ["amplia zona de fijación"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Estrella abierta 2-5 cm; saco esporífero aprox. 1-2 cm de diámetro."],
+      "Contexto o carne": ["Gleba madura de esporas pardas pulverulentas liberadas por poro apical; peristoma rodeado de círculo claro."]
+    }
+  },
+  {
+    "nombre": "Trametes versicolor",
+    "tipo": "Poliporo",
+    "imagen": "img/trametes-versicolor.jpg",
+    "descripcion": "Troncos muertos de latifoliadas. Consolas delgadas multizonadas y aterciopeladas; cara inferior blanca a crema con poros muy pequeños.",
+    "caracteristicas": {
+      "Posición del pie": ["ausente"],
+      "Inserción de las láminas": ["no aplica"],
+      "Borde de las láminas": ["no aplica"],
+      "Espaciado de las láminas": ["no aplica"],
+      "Margen del sombrero": ["incurvado", "ondulado"],
+      "Forma del sombrero": ["consola semicircular a ungulada"],
+      "Superficie del sombrero": ["aterciopelada", "zonada"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["no aplica"],
+      "Forma y consistencia del pie": ["no aplica"],
+      "Base del pie": ["amplia zona de fijación"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Consolas 2.5-8 cm de ancho y 1-3 mm de grosor; poros 3-8/mm."],
+      "Contexto o carne": ["Blanca, delgada, coriácea; a veces línea negra fina en corte bajo tomento."]
+    }
+  },
+  {
+    "nombre": "Paralepista flaccida",
+    "tipo": "Laminado",
+    "imagen": "img/paralepista-flaccida.jpg",
+    "descripcion": "Hojarasca acumulada. Píleo ocre rojizo con depresión embudada y margen joven enrollado; láminas muy decurrentes, apretadas y pálidas.",
+    "caracteristicas": {
+      "Posición del pie": ["central"],
+      "Inserción de las láminas": ["decurrentes"],
+      "Borde de las láminas": ["entero"],
+      "Espaciado de las láminas": ["juntas"],
+      "Margen del sombrero": ["enrollado", "ondulado"],
+      "Forma del sombrero": ["deprimido", "embudado"],
+      "Superficie del sombrero": ["lisa", "radial"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["lisa", "estrigosa"],
+      "Forma y consistencia del pie": ["igual / cilíndrico", "ensanchado", "firme"],
+      "Base del pie": ["con micelio basal"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Píleo 4-10 cm; pie 3-5 x 0.5-1 cm."],
+      "Contexto o carne": ["Blanquecina a crema, blanda a fláccida; esporada crema pálida."]
+    }
+  },
+  {
+    "nombre": "Ganoderma australe",
+    "tipo": "Poliporo",
+    "imagen": "img/ganoderma-australe.jpg",
+    "descripcion": "Troncos de latifoliadas. Consola grande, leñosa, aplanada, mate no lacada, costrosa y zonada; poros finos claros, contexto pardo con estratos.",
+    "caracteristicas": {
+      "Posición del pie": ["ausente"],
+      "Inserción de las láminas": ["no aplica"],
+      "Borde de las láminas": ["no aplica"],
+      "Espaciado de las láminas": ["no aplica"],
+      "Margen del sombrero": ["incurvado", "liso"],
+      "Forma del sombrero": ["consola semicircular a ungulada"],
+      "Superficie del sombrero": ["zonada", "rugosa"],
+      "Anillo": ["ausente"],
+      "Superficie del pie": ["no aplica"],
+      "Forma y consistencia del pie": ["no aplica"],
+      "Base del pie": ["amplia zona de fijación"],
+      "Volva": ["ausente"],
+      "Color y dimensiones": ["Material mexicano estudiado aprox. 20x16 cm, espesor del píleo ~0.7 cm; poros blancos a amarillentos 4-5/mm."],
+      "Contexto o carne": ["Leñosa, estratificada, parda rojiza con capas de tubos de hasta ~12 mm y bandas internas; esporada parda."]
+    }
+  }
 ];
