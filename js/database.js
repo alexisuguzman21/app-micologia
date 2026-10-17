@@ -67,6 +67,8 @@ const opcionesBase = {
         "rugosa",
         "viscosa",
         "zonada",
+        "fibrilosa",
+        "ondulada", 
         "no aplica"
     ],
     "Anillo": [
@@ -88,10 +90,16 @@ const opcionesBase = {
         "pubescente",
         "escabrosa",
         "escrobiculada",
+        "fibrilosa",
+        "escamosa", 
+        "estriada", 
+        "radial",   
+        "viscosa",  
         "no aplica"
     ],
     "Forma y consistencia del pie": [
         "cónico",
+        "cilíndrico",
         "igual / cilíndrico",
         "ensanchado",
         "bulboso",
@@ -109,6 +117,7 @@ const opcionesBase = {
         "bulbosa",
         "atenuada",
         "amplia zona de fijación",
+        "fijada a madera", 
         "no aplica"
     ],
     "Volva": [
